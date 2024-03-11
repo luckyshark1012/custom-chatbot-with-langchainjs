@@ -1,6 +1,6 @@
-const { OpenAIEmbeddings } = require("langchain/embeddings/openai");
+const { OpenAIEmbeddings } = require("@langchain/openai");
 const { RecursiveCharacterTextSplitter } = require("langchain/text_splitter");
-const { HNSWLib } = require("langchain/vectorstores/hnswlib");
+const { HNSWLib } = require("@langchain/community/vectorstores/hnswlib");
 const fs = require("fs");
 
 async function trainBot(req, res) {

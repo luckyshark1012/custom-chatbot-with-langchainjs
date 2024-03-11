@@ -25,13 +25,13 @@ You will have a NodeJS server running at `http://localhost:3000`.
 First, add some training data into the `training-data.txt` file. Then, hit the following endpoint to train the model.
 
 ```bash
-curl -X GET http://localhost:4000/train
+curl -X GET http://localhost:3000/train-bot
 ```
 
 ## Ask a question
 
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"question": "YOUR_QUESTION_HERE"}' http://localhost:4000/get-answer
+curl -X POST -H "Content-Type: application/json" -d '{"question": "YOUR_QUESTION_HERE"}' http://localhost:3000/get-answer
 ```
 
 And wait for the answer!
