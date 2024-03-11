@@ -1,6 +1,6 @@
-const { OpenAI } = require("langchain/llms/openai");
-const { OpenAIEmbeddings } = require("langchain/embeddings/openai");
-const { HNSWLib } = require("langchain/vectorstores/hnswlib");
+const { OpenAI } = require("@langchain/openai");
+const { OpenAIEmbeddings } = require("@langchain/openai");
+const { HNSWLib } = require("@langchain/community/vectorstores/hnswlib");
 const { RetrievalQAChain, loadQARefineChain } = require("langchain/chains");
 
 const model = new OpenAI({
@@ -13,7 +13,7 @@ async function getAnswer(req, res) {
   try {
     const vectorStore = await HNSWLib.load(
       "hnswlib",
-      new OpenAIEmbeddings({ openAIApiKey: OPENAI_API_KEY }),
+      new OpenAIEmbeddings({ openAIApiKey: process.env.OPENAI_API_KEY }),
     );
 
     const chain = new RetrievalQAChain({
